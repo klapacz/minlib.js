@@ -11,14 +11,14 @@ Simple and light javascript library for event delegation and queryselector.
 example :
 
 1. minlib:
-⋅⋅⋅  ```javascript
-⋅⋅⋅  sel('h1');
-⋅⋅⋅  sel('h1', document)
-⋅⋅⋅  ```
+⋅⋅⋅```javascript
+  sel('h1');
+  sel('h1', document)
+```
 ⋅⋅⋅  vanilla:
 ⋅⋅⋅  ```javascript
-⋅⋅⋅  document.querySelector('h1')
-⋅⋅⋅  ```
+  document.querySelector('h1')
+  ```
 
 ## querySelectorAll
 
