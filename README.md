@@ -5,7 +5,7 @@ Simple and light javascript library for event delegation and queryselector.
 - - - -
 ## How to use ?
 
-1.Include minlib on your page before the closing </body> tag
+1.Include minlib on your page before the closing `</body>` tag
 ```html
 <script src="/path/to/minlib.js"></script>
 ```
