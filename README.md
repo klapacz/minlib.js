@@ -3,5 +3,6 @@
 
 example :
 
-```sel('h1)
+```
+sel('h1)
 ```
