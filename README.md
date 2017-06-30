@@ -10,9 +10,9 @@ Simple and light javascript library for event delegation and queryselector.
 
 example :
 
-⋅⋅*minlib:
+1. minlib:
   ```javascript
-  sel('h1);
+  sel('h1');
   sel('h1', document)
   ```
   vanilla:
