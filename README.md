@@ -1,13 +1,13 @@
 # minlib.js
 
-Minlib is small (~0.8kb minified) javascript library to event listener and queryselector. 
+Minlib.js is small (~0.8kb minified) javascript library to event listener and queryselector. 
 
 file          | weight
 --------------|----------
 minlib.js     | 1.16 KB
 minlib.min.js | **0.82 KB**
 
-## How to use ?
+## Instalation
 
 1.Include minlib.min.js on your page before the closing `</body>` tag
 ```html
@@ -34,19 +34,19 @@ sel('h1'); // baseElement is document
 
 vanilla.js
 ```javascript
-document.querySelector('h1')
+document.querySelector('h1');
 ```
 ##### example 2
 minlib.js:
 ```javascript
-sel('h1', element) // baseElement is element
+sel('h1', element); // baseElement is element
 ```
 vanilla.js:
 ```javascript
-element.querySelector('h1')
+element.querySelector('h1');
 ```
 
-[`Element.querySelector()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelector)
+[`Element.querySelector()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelector "Mozilla developer network")
 
 ### all() (`querySelectorAll`)
 
@@ -61,27 +61,31 @@ Syntax:`all(selector, baseElement)`
 
 minlib.js: 
 ```javascript
-all('h1') // baseElement is document
+all('h1'); // baseElement is document
 ```
 vanilla.js:
 ```javascript
-document.querySelectorAll('h1')
+document.querySelectorAll('h1');
 ```
 
 ##### example 2
 
 minlib: 
 ```javascript
-all('h1', element) // baseElement is element
+all('h1', element); // baseElement is element
 ```
 vanilla: 
 ```javascript
-element.querySelectorAll('h1')
+element.querySelectorAll('h1');
 ```
 
-[`Element.querySelectorAll()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelectorAll)
+[`Element.querySelectorAll()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelectorAll "Mozilla developer network")
 
  ### addEvt() (`addEventListener()`)
+ 
+ Syntax: `addEvt(target, type, listener)`
+ 
+ ----
  
 ##### example 1
  
@@ -100,60 +104,69 @@ addEvt('h1', 'click', yourFunction);
 vanilla.js:
 ```javascript
 document.querySelectorAll('h1').forEach(function (element) {
-element.addEventListner('click', yourFunction)
-})
-```
-2.**minlib:**
-```javascript
-addEvt(['h1', 'h2', 'p'], 'click', yourFunction)
-```
-**vanilla**
-```javascript
-document.querySelectorAll('h1').forEach(function (element) {
-element.addEventListner('click', yourFunction)
-})   
-document.querySelectorAll('h2').forEach(function (element) {
-element.addEventListner('click', yourFunction)
-})
-document.querySelectorAll('p').forEach(function (element) {
-element.addEventListner('click', yourFunction)
-})
+    element.addEventListner('click', yourFunction);
+});
 ```
 
-3.**minlib:**
+##### example 2
+
+minlib.js:
+```javascript
+addEvt(['h1', 'h2', 'p'], 'click', yourFunction);
+```
+vanilla.js
+```javascript
+['h1', 'h2', 'p'].forEach(function (element) {
+    document.querySelectorAll(element).forEach(function (el) {
+        el.addEventListner('click', yourFunction);
+    });
+});
+```
+
+##### example 3
+
+minlib.js:
 ```javascript
 addEvt(sel('h1'), 'click', fuction () {
-//code
-})
+    //code
+});
 ```
 
-4.**minlib:**
+##### example 4
+minlib.js:
 ```javascript
-addEvt(all('h1'), 'click'. yourFunction)
-```
-5.**minlib:**
-```javascript
-addEvt(element, 'click', yourFunction)
+addEvt(all('h1')[2], 'click'. yourFunction);
 ```
 
-### loaded (`DOMContentLoaded`,  `$( document ).ready(function() {})`)
-**minlib:**
+##### example 5
+minlib.js:
+```javascript
+addEvt(element, 'click', yourFunction);
+```
+
+### loaded() (`DOMContentLoaded`,  `$( document ).ready(function() {})`)
+
+Syntax: `loaded(listener)`
+
+minlib.js:
 ```javascript
 loaded(function(){
     //code
-})
+});
 ```
 
-**vanilla:**
+vanilla.js:
 ```javascript
 document.addEventListener('DOMContentLoaded', function () {
     //code
-})
+});
 ```
 
-**jQuery:**
+jQuery:
 ```javascript
 $( document ).ready(function() {
     //code
-})
+});
 ```
+
+[`element.addEventListener` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/addEventListener "Mozilla developer network")
