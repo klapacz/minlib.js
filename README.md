@@ -15,7 +15,7 @@ example :
   sel('h1');
   sel('h1', document)
   ```
-⋅⋅⋅ vanilla:
+ vanilla:
   ```javascript
   document.querySelector('h1')
   ```
