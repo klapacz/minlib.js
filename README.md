@@ -156,6 +156,8 @@ addEvt(element, 'click', yourFunction);
 
 Syntax: `loaded(listener)`
 
+##### example
+
 minlib.js:
 ```javascript
 loaded(function(){
