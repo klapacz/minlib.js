@@ -106,9 +106,10 @@ minlib.js:
 ```javascript
 addEvt('h1', 'click', yourFunction);
 ```
-> Tip:
->>  This use `addEventListener` on all `<h1></h1>` element on page.
->>  If you want to use listener only on the first element with `<h1></h1>` tag you should write in target: 
+> Tips:
+>> 1.This use `addEventListener` on all `<h1></h1>` element on page.
+>
+>> 2.If you want to use listener only on the first element with `<h1></h1>` tag you should write in target: 
 >>  `sel('h1')`  or `all('h1')[0]`.
 
 
