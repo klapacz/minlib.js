@@ -2,10 +2,15 @@
 
 Minlib.js is small (~0.8kb minified) javascript library to event listener and queryselector. 
 
-file          | weight
---------------|----------
-minlib.js     | 1.16 KB
-minlib.min.js | **0.82 KB**
+file (ES6)    | weight
+--------------|-------------
+minlib.js     | ~1.3 KB
+minlib.min.js | **0.653 KB**
+
+file (with support for old browsers)    | weight
+----------------------------------------|--------------
+forOldBrowsers/minlib.js                | ~1.33 KB
+forOldBrowsers/minlib.min.js            | **0.711 KB**
 
 ## Instalation
 
@@ -20,10 +25,12 @@ minlib.min.js | **0.82 KB**
 ### sel() (`querySelector`) 
 
 Function `sel()` returns the first element that is a descendant of the element on which it is invoked that matches the specified group of selectors.
-Syntax:`sel(selector, baseElement)` 
->If a baseElement is document, you don't have to write this.
 
------
+Syntax:`sel(selector, baseElement)` 
+>   Tips :
+>>  1.If a baseElement is document, you don't have to write this.
+
+[`Element.querySelector()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelector "Element.querySelector() - MDN")
 
 ##### example 1
 
@@ -32,7 +39,7 @@ minlib.js:
 sel('h1'); // baseElement is document
 ```
 
-vanilla.js
+[vanilla.js:](http://vanilla-js.com/)
 ```javascript
 document.querySelector('h1');
 ```
@@ -41,21 +48,22 @@ minlib.js:
 ```javascript
 sel('h1', element); // baseElement is element
 ```
-vanilla.js:
+[vanilla.js:](http://vanilla-js.com/)
 ```javascript
 element.querySelector('h1');
 ```
 
-[`Element.querySelector()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelector "Mozilla developer network")
-
 ### all() (`querySelectorAll`)
 
 Function `all()` Returns a non-live NodeList of all elements descended from the element on which it is invoked that matches the specified group of CSS selectors. 
-Syntax:`all(selector, baseElement)`
->If a baseElement is document, you don't have to write this.
-> `querySelectorAll` returs array so you should use `forEach()`
 
-----
+Syntax:`all(selector, baseElement)`
+
+>   Tips :
+>>  1.If a baseElement is document, you don't have to write this.
+>>  2.`querySelectorAll` returs NodeList(array) so you should use [`forEach()`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach "NodeList.forEach() - MDN")
+
+[`Element.querySelectorAll()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelectorAll "Element.querySelectorAll - MDN")
 
 ##### example 1
 
@@ -63,45 +71,47 @@ minlib.js:
 ```javascript
 all('h1'); // baseElement is document
 ```
-vanilla.js:
+[vanilla.js:](http://vanilla-js.com/)
 ```javascript
 document.querySelectorAll('h1');
 ```
 
 ##### example 2
 
-minlib: 
+minlib.js: 
 ```javascript
 all('h1', element); // baseElement is element
 ```
-vanilla: 
+[vanilla.js:](http://vanilla-js.com/)
 ```javascript
 element.querySelectorAll('h1');
 ```
-
-[`Element.querySelectorAll()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelectorAll "Mozilla developer network")
 
  ### addEvt() (`addEventListener()`)
  
  Syntax: `addEvt(target, type, listener)`
  
- ----
- 
+ In target you can write: 
+ 1. [Element](https://developer.mozilla.org/en-US/docs/Web/API/element "Element - MDN") (example 5, example 3)
+ 2. [NodeLIst](https://developer.mozilla.org/pl/docs/Web/API/NodeList "NodeList - MDN")
+ 3. Selector (example 1)
+ 4. Array with selectors. (example 2)
+
+[`element.addEventListener` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/addEventListener "Mozilla developer network") 
+
 ##### example 1
  
 minlib.js:
 ```javascript
 addEvt('h1', 'click', yourFunction);
 ```
->This use `addEventListener` on all `<h1></h1>` element on page.
->>If you want use listener only on first element with `<h1></h1>` tag you should write:
->>`addEvt(sel('h1'), 'click', yourFunction)`
->>or use class/id
->
->>If you want use listener
+> Tip:
+>>  This use `addEventListener` on all `<h1></h1>` element on page.
+>>  If you want to use listener only on the first element with `<h1></h1>` tag you should write in target: 
+>>  `sel('h1')`  or `all('h1')[0]`.
 
 
-vanilla.js:
+[vanilla.js:](http://vanilla-js.com/)
 ```javascript
 document.querySelectorAll('h1').forEach(function (element) {
     element.addEventListner('click', yourFunction);
@@ -114,7 +124,7 @@ minlib.js:
 ```javascript
 addEvt(['h1', 'h2', 'p'], 'click', yourFunction);
 ```
-vanilla.js
+[vanilla.js:](http://vanilla-js.com/)
 ```javascript
 ['h1', 'h2', 'p'].forEach(function (element) {
     document.querySelectorAll(element).forEach(function (el) {
@@ -168,5 +178,3 @@ $( document ).ready(function() {
     //code
 });
 ```
-
-[`element.addEventListener` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/addEventListener "Mozilla developer network")
