@@ -60,8 +60,9 @@ Function `all()` Returns a non-live NodeList of all elements descended from the 
 Syntax:`all(selector, baseElement)`
 
 >   Tips :
->>  1.If a baseElement is document, you don't have to write this.
->>  2.`querySelectorAll` returs NodeList(array) so you should use [`forEach()`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach "NodeList.forEach() - MDN")
+>  1.If a baseElement is document, you don't have to write this.
+>
+>  2.`querySelectorAll` returs NodeList(array) so you should use [`forEach()`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach "NodeList.forEach() - MDN")
 
 [`Element.querySelectorAll()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelectorAll "Element.querySelectorAll - MDN")
 
