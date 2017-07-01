@@ -1,6 +1,6 @@
 # minlib.js
 
-Minlib.js is small (~0.8kb minified) javascript library to event listener and queryselector. 
+Minlib.js is small and simple javascript library to adding event listeners and searching elements by CSS selectors.
 
 file (ES6)    | weight
 --------------|-------------
