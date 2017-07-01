@@ -22,15 +22,13 @@ forOldBrowsers/minlib.min.js            | **0.711 KB**
 
 ## Documentation
 
-### sel() (`querySelector`) 
+### sel() ([`Element.querySelector()`](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelector "Element.querySelector() - MDN")) 
 
 Function `sel()` returns the first element that is a descendant of the element on which it is invoked that matches the specified group of selectors.
 
 Syntax:`sel(selector, baseElement)` 
 >   Tips :
 >>  1.If a baseElement is document, you don't have to write this.
-
-[`Element.querySelector()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelector "Element.querySelector() - MDN")
 
 ##### example 1
 
@@ -53,7 +51,7 @@ sel('h1', element); // baseElement is element
 element.querySelector('h1');
 ```
 
-### all() (`querySelectorAll`)
+### all() ([`Element.querySelectorAll()`](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelectorAll "Element.querySelectorAll - MDN"))
 
 Function `all()` Returns a non-live NodeList of all elements descended from the element on which it is invoked that matches the specified group of CSS selectors. 
 
@@ -63,8 +61,6 @@ Syntax:`all(selector, baseElement)`
 >> 1.If a baseElement is document, you don't have to write this.
 >
 >> 2.`querySelectorAll` returs NodeList(array) so you should use [`forEach()`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach "NodeList.forEach() - MDN")
-
-[`Element.querySelectorAll()` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/querySelectorAll "Element.querySelectorAll - MDN")
 
 ##### example 1
 
@@ -88,17 +84,15 @@ all('h1', element); // baseElement is element
 element.querySelectorAll('h1');
 ```
 
- ### addEvt() (`addEventListener()`)
+ ### addEvt() ([`element.addEventListener`](https://developer.mozilla.org/pl/docs/Web/API/Element/addEventListener "element.addEventListener - MDN") )
  
- Syntax: `addEvt(target, type, listener)`
+ Syntax: `addEvt(target,`[`type,`](https://developer.mozilla.org/en-US/docs/Web/Events "Event reference - MDN")`listener)`
  
  In target you can write: 
  1. [Element](https://developer.mozilla.org/en-US/docs/Web/API/element "Element - MDN") (example 5, example 3)
  2. [NodeLIst](https://developer.mozilla.org/pl/docs/Web/API/NodeList "NodeList - MDN")
  3. Selector (example 1)
  4. Array with selectors. (example 2)
-
-[`element.addEventListener` on MDN](https://developer.mozilla.org/pl/docs/Web/API/Element/addEventListener "Mozilla developer network") 
 
 ##### example 1
  
@@ -167,7 +161,7 @@ loaded(function(){
 });
 ```
 
-vanilla.js:
+[vanilla.js:](http://vanilla-js.com/)
 ```javascript
 document.addEventListener('DOMContentLoaded', function () {
     //code
