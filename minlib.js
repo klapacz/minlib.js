@@ -1,66 +1,66 @@
 // querySelector
 
-const sel = (what, whence) => {
+const sel = (selectors, baseElement) => {
   
-  if(!whence){
-    whence = document;
+  if(!baseElement){
+    baseElement = document;
   }
   
-  if(whence.querySelector(what)){
-    return whence.querySelector(what);
+  if(baseElement.querySelector(selectors)){
+    return baseElement.querySelector(selectors);
   } else {
-    console.log(`i cant find ${what}`)
+    console.log(`i cant find ${selectors}`)
   }
   
 }
 
 // querySelectorAll
 
-const all = (what, whence) => {
+const all = (selectors, baseElement) => {
   
-  if(!whence){
-    whence = document;
+  if(!baseElement){
+    baseElement = document;
   }
 
-  if(whence.querySelectorAll(what).length === 0){
-    console.log(`i cant find ${what}`);
+  if(baseElement.querySelectorAll(selectors).length === 0){
+    console.log(`i cant find ${selectors}`);
   } else {
-    return whence.querySelectorAll(what);
+    return baseElement.querySelectorAll(selectors);
   }
   
 }
 
 // addEventListener
 
-const addEvt = (what, when, fun) => {
+const addEvt = (target, type, listener) => {
   
-  if(typeof what === 'string'){  
-    what = all(what)
+  if(typeof target === 'string'){  
+    target = all(target)
     
-    what.forEach((element) => {
-      element.addEventListener(when, fun);
+    target.forEach((element) => {
+      element.addEventListener(type, listener);
     }) 
     
-  } else if (Object.prototype.toString.call(what) === '[object NodeList]'){ 
-    what.forEach((element) => {
-      element.addEventListener(when, fun);
+  } else if (Object.prototype.toString.call(target) === '[object NodeList]'){ 
+    target.forEach((element) => {
+      element.addEventListener(type, listener);
     }) 
     
-  } else if (Array.isArray(what)){
-      what.forEach((element) => {
-        all(element).forEach((ele) => {
-          ele.addEventListener(when, fun);
+  } else if (Array.isArray(target)){
+      target.forEach((element) => {
+        all(element).forEach((el) => {
+          el.addEventListener(type, listener);
         })
       })
     
   } else {
-    what.addEventListener(when, fun);
+    target.addEventListener(type, listener);
   }
   
 }
 
 // DOMContentLoaded
 
-const loaded = (fun) => {
-  addEvt(document, 'DOMContentLoaded', fun);
+const loaded = (listener) => {
+  addEvt(document, 'DOMContentLoaded', listener);
 }
