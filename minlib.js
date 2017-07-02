@@ -43,7 +43,7 @@ let addEvt = (target, type, listener) => {
     for(element of target){
       element.addEventListener(type, listener);
     };
-  } else if (Object.prototype.toString.call(target) === '[object NodeList]'){ 
+  } else if (target instanceof NodeList || Array.isArray(target)){ 
     
     for(element of target){
       element.addEventListener(type, listener)
