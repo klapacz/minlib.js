@@ -138,7 +138,7 @@ let el = sel('.container')
 addEvt(el, 'click', yourFunction);
 ```
 
-### loaded() ([`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded "DOMContentLoaded - MDN"),  [`$( document ).ready()`](https://learn.jquery.com/using-jquery-core/document-ready/ "$( document ).ready() - jQuery"))
+### loaded() ([`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded "DOMContentLoaded - MDN"))
 
  function `loaded()` start when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. 
 
