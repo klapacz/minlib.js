@@ -53,7 +53,7 @@ element.querySelector('h1');
 
 ### all() ([`Element.querySelectorAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll "Element.querySelectorAll - MDN"))
 
-Function `all()` Returns a non-live NodeList of all elements descended from the element on which it is invoked that matches the specified group of CSS selectors. 
+Function `all()` returns a non-live NodeList of all elements descended from the element on which it is invoked that matches the specified group of CSS selectors. 
 
 Syntax:`all(selector, baseElement)`
 
