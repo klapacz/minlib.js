@@ -1,66 +1,57 @@
 // querySelector
 
-const sel = (selectors, baseElement) => {
+let sel = (selectors, baseElement) => {
   
   if(!baseElement){
     baseElement = document;
   }
   
-  if(baseElement.querySelector(selectors)){
-    return baseElement.querySelector(selectors);
-  } else {
-    console.log(`i cant find ${selectors}`)
-  }
-  
+  return baseElement.querySelector(selectors);
 }
 
 // querySelectorAll
 
-const all = (selectors, baseElement) => {
+let all = (selectors, baseElement) => {
   
   if(!baseElement){
     baseElement = document;
   }
 
-  if(baseElement.querySelectorAll(selectors).length === 0){
-    console.log(`i cant find ${selectors}`);
-  } else {
-    return baseElement.querySelectorAll(selectors);
-  }
-  
+  return baseElement.querySelectorAll(selectors)
 }
 
 // addEventListener
 
-const addEvt = (target, type, listener) => {
+let addEvt = (target, type, listener) => {
   
-  if(typeof target === 'string'){  
-    target = all(target)
+  if(typeof target === 'string'){ 
     
-    target.forEach((element) => {
+    target = all(target);
+    
+    for(element of target){
       element.addEventListener(type, listener);
-    }) 
-    
+    };
   } else if (Object.prototype.toString.call(target) === '[object NodeList]'){ 
-    target.forEach((element) => {
-      element.addEventListener(type, listener);
-    }) 
     
+    for(element of target){
+      element.addEventListener(type, listener)
+    };
   } else if (Array.isArray(target)){
-      target.forEach((element) => {
-        all(element).forEach((el) => {
-          el.addEventListener(type, listener);
-        })
-      })
     
+    for(element of target){
+      for(el of all(element)){
+        el.addEventListener(type, listener);
+      }
+    }
   } else {
+    
     target.addEventListener(type, listener);
   }
   
-}
+};
 
 // DOMContentLoaded
 
-const loaded = (listener) => {
+let loaded = (listener) => {
   addEvt(document, 'DOMContentLoaded', listener);
-}
+};
