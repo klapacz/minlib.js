@@ -151,3 +151,7 @@ loaded(function(){
     //code
 });
 ```
+
+## License
+
+The MIT License (MIT)
