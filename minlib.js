@@ -20,7 +20,7 @@ let all = (selectors, baseElement) => {
   if(Array.isArray(selectors)){
     toReturn = []
     
-    for(element of sel){
+    for(element of selectors){
       for(el of baseElement.querySelectorAll(element)){
         toReturn.push(el);
       } 
