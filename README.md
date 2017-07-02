@@ -90,7 +90,7 @@ all('h1', element); // returns array with all h1 elements from element (baseElem
  1. [Element](https://developer.mozilla.org/en-US/docs/Web/API/element "Element - MDN") (example 5, example 3)
  2. [NodeLIst](https://developer.mozilla.org/en-US/docs/Web/API/NodeList "NodeList - MDN")
  3. Selector (example 1)
- 4. Array with selectors. (example 2)
+ 4. Array with elements. (example 2)
 
 ##### example 1
  
