@@ -14,11 +14,10 @@ forOldBrowsers/minlib.min.js            | **0.711 KB**
 
 ## Instalation
 
-1.Include minlib.min.js on your page before the closing `</body>` tag
+Include minlib.min.js on your page before the closing `</body>` tag
 ```html
 <script src="/path/to/minlib.min.js"></script>
 ```
-2.**Enjoy :D**
 
 ## Documentation
 
