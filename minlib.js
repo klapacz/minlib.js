@@ -12,12 +12,24 @@ let sel = (selectors, baseElement) => {
 // querySelectorAll
 
 let all = (selectors, baseElement) => {
+  let toReturn;
   
   if(!baseElement){
     baseElement = document;
   }
+  if(Array.isArray(selectors)){
+    toReturn = []
+    
+    for(element of sel){
+      for(el of baseElement.querySelectorAll(element)){
+        toReturn.push(el);
+      } 
+    } 
+  } else {
+    toReturn = baseElement.querySelectorAll(selectors)
+  }
 
-  return baseElement.querySelectorAll(selectors)
+  return toReturn;
 }
 
 // addEventListener
@@ -36,13 +48,6 @@ let addEvt = (target, type, listener) => {
     for(element of target){
       element.addEventListener(type, listener)
     };
-  } else if (Array.isArray(target)){
-    
-    for(element of target){
-      for(el of all(element)){
-        el.addEventListener(type, listener);
-      }
-    }
   } else {
     
     target.addEventListener(type, listener);
