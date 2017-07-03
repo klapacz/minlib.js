@@ -87,7 +87,7 @@ all('h1', element); // returns array with all h1 elements from element (baseElem
  Syntax: `addEvt(target,`[`type,`](https://developer.mozilla.org/en-US/docs/Web/Events "Event reference - MDN")`listener)`
  
  In target you can write: 
- 1. [Element](https://developer.mozilla.org/en-US/docs/Web/API/element "Element - MDN") (example 3, example 4, example 5)
+ 1. [Element ](https://developer.mozilla.org/en-US/docs/Web/API/element "Element - MDN") (or a function that returns an element) (example 3, example 4, example 5)
 1. String with selector (example 1)
 2. String with selectors (example 2)
 
