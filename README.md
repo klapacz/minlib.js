@@ -135,7 +135,7 @@ let el = sel('.container')
 addEvt(el, 'click', yourFunction);
 ```
 
-##### example 5  
+##### example 6  
 
 ```javascript
 let div = document.createElement('div')
