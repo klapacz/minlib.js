@@ -8,9 +8,9 @@ minlib.js     | 0.914 KB
 minlib.min.js | **0.442 KB**
 
 file (with support for old browsers)    | weight
-----------------------------------------|---------
-forOldBrowsers/minlib.js                | 1.92 KB
-forOldBrowsers/minlib.min.js            | 1.18 KB
+----------------------------------------|----------
+forOldBrowsers/minlib.js                | 1.12 KB
+forOldBrowsers/minlib.min.js            | 0.524 KB
 
 ## Instalation
 
