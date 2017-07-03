@@ -3,43 +3,30 @@
   
   // querySelector
 
-  const sel = (selectors, baseElement = document) => {
-    
+  const sel = (selectors, baseElement = document) => {  
     return baseElement.querySelector(selectors);
-  }
+  };
 
   // querySelectorAll
 
   const all = (selectors, baseElement = document) => {
-    let toReturn = [];
-    
-    for(let element of baseElement.querySelectorAll(selectors)){
-      toReturn.push(element)
-    }
-
-    return toReturn;
-  }
+      return [...baseElement.querySelectorAll(selectors)];
+  };
 
   // addEventListener
 
   const addEvt = (target, type, listener) => {
 
-    if(typeof target === 'string'){ 
-
-      target = all(target);
-
-      for(let element of target){
-        element.addEventListener(type, listener);
+    if (Array.isArray(target) || typeof target === 'string'){ 
+      if(!Array.isArray(target)){
+        target = all(target);
       };
-    } else if (Array.isArray(target)){ 
-
       for(let element of target){
         element.addEventListener(type, listener);
       };
     } else {
-
       target.addEventListener(type, listener);
-    }
+    };
 
   };
 
@@ -49,7 +36,7 @@
     addEvt(document, 'DOMContentLoaded', listener);
   };
   
-  //export
+  // export
   
   window.sel = sel;
   window.all = all;

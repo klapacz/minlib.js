@@ -87,7 +87,7 @@ all('h1', element); // returns array with all h1 elements from element (baseElem
  Syntax: `addEvt(target,`[`type,`](https://developer.mozilla.org/en-US/docs/Web/Events "Event reference - MDN")`listener)`
  
  In target you can write: 
- 1. [Element ](https://developer.mozilla.org/en-US/docs/Web/API/element "Element - MDN") (or a function that returns an element) (example 3, example 4, example 5)
+ 1. [Element ](https://developer.mozilla.org/en-US/docs/Web/API/element "Element - MDN") (or a function that returns an element) (example 3, example 4, example 5, example 6)
 1. String with selector (example 1)
 2. String with selectors (example 2)
 
@@ -125,7 +125,7 @@ addEvt(sel('#row'), 'click', fuction () {
 ##### example 4
 
 ```javascript
-addEvt(all('.button')[1], 'click'. yourFunction); // sets event listener on second element with button class
+addEvt(all('.button')[1], 'click', yourFunction); // sets event listener on second element with button class
 ```
 
 ##### example 5
@@ -133,6 +133,13 @@ addEvt(all('.button')[1], 'click'. yourFunction); // sets event listener on seco
 ```javascript
 let el = sel('.container')
 addEvt(el, 'click', yourFunction);
+```
+
+##### example 5  
+
+```javascript
+let div = document.createElement('div')
+addEvt(div, 'click', yourFunction);
 ```
 
 ### loaded() ([`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded "DOMContentLoaded - MDN"))
