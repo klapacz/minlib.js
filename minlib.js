@@ -1,40 +1,20 @@
 (function () {
   "use strict";
-
-  // variables
-
-  let element,
-      el;
-
+  
   // querySelector
 
-  const sel = (selectors, baseElement) => {
-
-    if(!baseElement){
-      baseElement = document;
-    }
-
+  const sel = (selectors, baseElement = document) => {
+    
     return baseElement.querySelector(selectors);
   }
 
   // querySelectorAll
 
-  const all = (selectors, baseElement) => {
-    let toReturn;
-
-    if(!baseElement){
-      baseElement = document;
-    }
-    if(Array.isArray(selectors)){
-      toReturn = [];
-
-      for(element of selectors){
-        for(el of baseElement.querySelectorAll(element)){
-          toReturn.push(el);
-        } 
-      } 
-    } else {
-      toReturn = baseElement.querySelectorAll(selectors);
+  const all = (selectors, baseElement = document) => {
+    let toReturn = [];
+    
+    for(let element of baseElement.querySelectorAll(selectors)){
+      toReturn.push(element)
     }
 
     return toReturn;
@@ -48,12 +28,12 @@
 
       target = all(target);
 
-      for(element of target){
+      for(let element of target){
         element.addEventListener(type, listener);
       };
-    } else if (target instanceof NodeList || Array.isArray(target)){ 
+    } else if (Array.isArray(target)){ 
 
-      for(element of target){
+      for(let element of target){
         element.addEventListener(type, listener);
       };
     } else {

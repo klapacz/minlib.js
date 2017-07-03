@@ -49,7 +49,7 @@ sel('header h1')
 
 ### all() ([`Element.querySelectorAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll "Element.querySelectorAll - MDN"))
 
-Function `all()` returns a non-live NodeList of all elements descended from the element on which it is invoked that matches the specified group of CSS selectors. 
+Function `all()` returns a Array (not NodeList) of all elements descended from the element on which it is invoked that matches the specified group of CSS selectors. 
 
 
 Syntax:`all(selector, baseElement)`
@@ -57,11 +57,11 @@ Syntax:`all(selector, baseElement)`
 In selector you can write:
 
 1. String with selector (example 1)
-2. Array with selectors (example 2)
+2. String with selectors (example 2)
 
 If a baseElement is document, you don't have to write this.
 
->`querySelectorAll` returs NodeList(array) so you should use[`for...of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of "for...of - MDN") [(`or forEach()`)](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach "NodeList.forEach() - MDN")
+>`all()` returs Array so you should use[`for...of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of "for...of - MDN") [(`or forEach()`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach "Array.prototype.forEach() - MDN")
 
 ##### example 1
 
@@ -72,7 +72,7 @@ all('h1'); // returns array with all h1 elements (baseElement is document)
 ##### example 2
 
 ```javascript
-all(['h1', 'p']) // returns array with all h1 and p elements 
+all('h1, p') // returns array with all h1 and p elements 
 ```
 
 ##### example 3
@@ -107,14 +107,12 @@ addEvt('h1', 'click', yourFunction); // sets event listener on all h1 element
 ##### example 2
 
 ```javascript
-addEvt(all(['h1', 'h2', 'p']), 'click', yourFunction); // sets event listener on all h1 h2 and p element 
+addEvt('h1, h2, p', 'click', yourFunction); // sets event listener on all h1 h2 and p element 
 ```
 In [vanilla.js](http://vanilla-js.com/) you have to write:
 ```javascript
-['h1', 'h2', 'p'].forEach(function (element) {
-    document.querySelectorAll(element).forEach(function (el) {
-        el.addEventListner('click', yourFunction);
-    });
+document.querySelectorAll('h1, h2, p').forEach(function (element) {
+    element.addEventListener('click', yourFunction);
 });
 ```
 
