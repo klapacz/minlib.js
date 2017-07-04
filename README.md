@@ -4,8 +4,8 @@ Minlib.js is small and simple javascript library to adding event listeners and s
 
 file (ES6)    | weight
 --------------|-------------
-minlib.js     | 0.914 KB
-minlib.min.js | **0.442 KB**
+minlib.js     | 0.658 KB
+minlib.min.js | **0.245 KB**
 
 file (with support for old browsers)    | weight
 ----------------------------------------|----------
