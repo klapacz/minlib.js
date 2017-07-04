@@ -21,7 +21,7 @@ Include minlib.min.js on your page before the closing `</body>` tag
 
 ## Documentation
 
-### sel() ([`Element.querySelector()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector "Element.querySelector() - MDN")) 
+### query() ([`Element.querySelector()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector "Element.querySelector() - MDN")) 
 
 Function `sel()` returns the first element that is a descendant of the element on which it is invoked that matches the specified group of selectors.
 
@@ -47,7 +47,7 @@ sel('h1', el);              // returns first h1 element from el (baseElement is 
 sel('header h1')
 ```
 
-### all() ([`Element.querySelectorAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll "Element.querySelectorAll - MDN"))
+### queryAll() ([`Element.querySelectorAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll "Element.querySelectorAll - MDN"))
 
 Function `all()` returns a Array (not NodeList) of all elements descended from the element on which it is invoked that matches the specified group of CSS selectors. 
 
@@ -81,10 +81,9 @@ all('h1, p') // returns array with all h1 and p elements
 all('h1', element); // returns array with all h1 elements from element (baseElement is element)
 ```
 
-
- ### addEvt() ([`element.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener "element.addEventListener - MDN") )
+### addEvent() ([`element.addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener "element.addEventListener - MDN") )
  
- Syntax: `addEvt(target,`[`type,`](https://developer.mozilla.org/en-US/docs/Web/Events "Event reference - MDN")`listener)`
+ Syntax: `addEvt(target,`[`type,`](https://developer.mozilla.org/en-US/docs/Web/Events "Event reference - MDN")`listener, useCapture)`
  
  In target you can write: 
  1. [Element ](https://developer.mozilla.org/en-US/docs/Web/API/element "Element - MDN") (or a function that returns an element) (example 3, example 4, example 5, example 6)
@@ -142,9 +141,9 @@ let div = document.createElement('div')
 addEvt(div, 'click', yourFunction);
 ```
 
-### loaded() ([`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded "DOMContentLoaded - MDN"))
+### loaded() ([`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load "load - MDN"))
 
- function `loaded()` start when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. 
+function `loaded()` fired when a resource and its dependent resources have finished loading.
 
 Syntax: `loaded(listener)`
 
