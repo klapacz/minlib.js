@@ -7,11 +7,6 @@ file (ES6)    | weight
 minlib.js     | 0.658 KB
 minlib.min.js | **0.245 KB**
 
-file (with support for old browsers)    | weight
-----------------------------------------|----------
-forOldBrowsers/minlib.js                | 1.12 KB
-forOldBrowsers/minlib.min.js            | 0.524 KB
-
 ## Instalation
 
 Include minlib.min.js on your page before the closing `</body>` tag
