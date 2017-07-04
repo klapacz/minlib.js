@@ -32,14 +32,15 @@ query('h1'); // returns first h1 element (baseElement is document)
 
 ##### example 2
 ```javascript
-let el = query('.container')  // returns element with class container
+let el = query('.container'); // returns element with class container
+
 query('h1', el);              // returns first h1 element from el (baseElement is el)
 ```
 
 ##### exmaple 3
 
 ```javascript
-sel('header h1')
+query('header h1');
 ```
 
 ### queryAll() ([`Element.querySelectorAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll "Element.querySelectorAll - MDN"))
@@ -53,8 +54,8 @@ In selector you can write:
 
 1. String with selector (example 1)
 2. String with selectors (example 2)
-3. Element return array with this element
-4. Array with elements return this
+3. Element (function returns array with this element)
+4. Array with elements (function returns this array)
 
 If a baseElement is document, you don't have to write this.
 
@@ -94,11 +95,6 @@ minlib.js:
 ```javascript
 addEvt('h1', 'click', yourFunction); // sets event listener on all h1 element
 ```
-> Tips:
->> 1.This use `addEventListener` on all `<h1></h1>` element on page.
->
->> 2.If you want to use listener only on the first element with `<h1></h1>` tag you should write in target: 
->>  `query('h1')`  or `queryAll('h1')[0]`.
 
 ##### example 2
 
