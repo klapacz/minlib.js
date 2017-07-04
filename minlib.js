@@ -1,28 +1,46 @@
-window.query = (selector, baseElement = document) => {
-  return baseElement.querySelector(selector);
-};
+(function () {
+  "use strict";
+  
+  // querySelector
 
-// querySelectorAll
-window.queryAll = (selector, baseElement = document) => {
-  if (typeof selector === 'string') {
-    return [...baseElement.querySelectorAll(selector)];
-  }
+  const sel = (selectors, baseElement = document) => {  
+    return baseElement.querySelector(selectors);
+  };
 
-  if (selectors.length) {
-    return [...selector];
-  }
+  // querySelectorAll
 
-  return [selector];
-};
+  const all = (selectors, baseElement = document) => {
+      return [...baseElement.querySelectorAll(selectors)];
+  };
 
-// addEventListener
-window.addEvent = (targets, type, listener, useCapture = false) => {
-  queryAll(targets).forEach(target => {
-    target.addEventListener(type, listener, useCapture);
-  });
-};
+  // addEventListener
 
-// DOMContentLoaded
-window.loaded = (listener) => {
-  addEvent(document, 'load', listener);
-};
+  const addEvt = (target, type, listener) => {
+
+    if (Array.isArray(target) || typeof target === 'string'){ 
+      if(!Array.isArray(target)){
+        target = all(target);
+      };
+      for(let element of target){
+        element.addEventListener(type, listener);
+      };
+    } else {
+      target.addEventListener(type, listener);
+    };
+
+  };
+
+  // DOMContentLoaded
+
+  const loaded = (listener) => {
+    addEvt(document, 'DOMContentLoaded', listener);
+  };
+  
+  // export
+  
+  window.sel = sel;
+  window.all = all;
+  window.addEvt = addEvt;
+  window.loaded = loaded;
+  
+}());
