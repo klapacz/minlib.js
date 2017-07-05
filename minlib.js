@@ -23,32 +23,32 @@ window.addDelegation = (parents, targets, type, listener) => {
     let element = event.target;
     
     if(targets[0] === '.'){
-      let target = targets.slice(1, targets.length)
+      let target = targets.slice(1, targets.length);
       
       for(let currentClass of element.classList){
         if(currentClass == target){
-          listener(element, event)
-        }
-      }
-    } 
+          listener(element, event);
+        };
+      };
+    }; 
     
     if (targets[0] === '#'){
       let target = targets.slice(1, targets.length)
       
-      if(target = element.id){
+      if(target == element.id){
         listener(element, event)
       }
-    }
+    };
     
     if(element.tagName.toLowerCase() === targets){
       listener(element, event);
-    }
-  }
+    };
+  };
   
   for(let parent of queryAll(parents)){
     parent.addEventListener(type, check, event);
   }
-}
+};
 
 // addEventListener
 window.addEvent = (targets, type, listener, useCapture = false) => {
