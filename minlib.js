@@ -25,5 +25,5 @@ window.addEvent = (targets, type, listener, useCapture = false) => {
 
 // load
 window.loaded = (listener) => {
-  addEvent(document, 'load', listener);
+  addEvent(window, 'load', listener);
 };
