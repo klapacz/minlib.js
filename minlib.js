@@ -24,7 +24,7 @@ window.addDelegation = (obj) => {
     let element = event.target;
     
     if(element.matches(obj.targets)){
-      obj.listener(element, event);
+      obj.listener.call(element, event);
     };
   };
   
