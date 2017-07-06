@@ -16,38 +16,21 @@ window.queryAll = (selector, baseElement = document) => {
   return [selector];
 };
 
-// eventDelegation
-window.addDelegation = (parents, targets, type, listener) => {
+// eventDelegation 
+// parameters: parents targets type listener
+window.addDelegation = (obj) => {
   
   let check = (event) => {
     let element = event.target;
     
-    if(targets[0] === '.'){
-      let target = targets.slice(1, targets.length);
-      
-      for(let currentClass of element.classList){
-        if(currentClass == target){
-          listener(element, event);
-        };
-      };
-    }; 
-    
-    if (targets[0] === '#'){
-      let target = targets.slice(1, targets.length)
-      
-      if(target == element.id){
-        listener(element, event)
-      }
-    };
-    
-    if(element.tagName.toLowerCase() === targets){
-      listener(element, event);
+    if(element.matches(obj.targets)){
+      obj.listener(element, event);
     };
   };
   
-  for(let parent of queryAll(parents)){
-    parent.addEventListener(type, check, event);
-  }
+  for(let parent of queryAll(obj.parents)){
+    parent.addEventListener(obj.type, check);
+  };
 };
 
 // addEventListener
