@@ -1,0 +1,19 @@
+{
+  "name": "minlib.js",
+  "version": "1.0.0",
+  "description": "Minlib.js is small and simple javascript library to adding event listeners and searching elements by CSS selectors.",
+  "main": "minlib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kornellapacz/minlib.js.git"
+  },
+  "author": "kornellapacz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kornellapacz/minlib.js/issues"
+  },
+  "homepage": "https://github.com/kornellapacz/minlib.js#readme"
+}
