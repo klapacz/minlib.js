@@ -25,11 +25,14 @@ window.addDelegation = (obj) => {
     
     if(element.matches(obj.targets)){
       obj.listener.call(element, event);
-    };
+    } 
+    if (element.matches(obj.targets + ' *')){ 
+      obj.listener.call(element.closest(obj.targets), event);
+    }
   };
   
   for(let parent of queryAll(obj.parents)){
-    parent.addEventListener(obj.type, check);
+    addEvent(parent, obj.type, check)
   };
 };
 
